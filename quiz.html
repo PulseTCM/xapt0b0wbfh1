@@ -1,0 +1,551 @@
+<html>
+  <head></head>
+  <script
+    src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+    integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+    integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <body>
+    <div class="main-wrapper">
+      <div>
+        <h6 class="version">Sleep Quiz - v0.1</h6>
+      </div>
+      <div class="evaluate-panel-wrapper">
+        <div class="evaluate-panel">
+          <div class="evaluate-panel-inner">
+            <div class="question" question="1">
+              <h3 class="question-title">1. What is your gender?</h3>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q1"
+                  value="1"
+                />
+                Female
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q1"
+                  value="2"
+                />Male
+              </label>
+            </div>
+            <div class="question" question="2">
+              <h3 class="question-title">2.What is your age group?</h3>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q2"
+                  value="1"
+                />12-19
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q2"
+                  value="2"
+                />20 - 29
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q2"
+                  value="3"
+                />30 - 44
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q2"
+                  value="4"
+                />45 - 55
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q2"
+                  value="5"
+                />56 and above
+              </label>
+            </div>
+            <div class="question" question="3">
+              <h3 class="question-title">
+                3. How long have you been concerned about your sleep?
+              </h3>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q3"
+                  value="1"
+                />In the recent 1 week
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q3"
+                  value="2"
+                />2 weeks to 1 month
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q3"
+                  value="3"
+                />More than 3 months
+              </label>
+            </div>
+            <div class="question" question="4">
+              <h3 class="question-title">
+                4. Do you have difficulty falling asleep?
+              </h3>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q4"
+                  value="1"
+                  weights='{"type1":1, "type2": 2}'
+                />Ye s
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q4"
+                  value="2"
+                  weights='{"type1":0, "type2": 0}'
+                />N o
+              </label>
+            </div>
+            <div class="question" question="5">
+              <h3 class="question-title">
+                5. Do you usually wake up in the middle of the night, especially
+                between 1-3am?
+              </h3>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q5"
+                  value="1"
+                  weights='{"type1":2, "type2": 0}'
+                />Ye s
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q5"
+                  value="2"
+                  weights='{"type1":0, "type2": 0}'
+                />N o
+              </label>
+            </div>
+            <div class="question" question="6">
+              <h3 class="question-title">
+                6. Do you experience excessive dreaming and don't feel well
+                rested after a night's sleep?
+              </h3>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q6"
+                  value="1"
+                  weights='{"type1":0, "type2": 2}'
+                />Ye s
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q6"
+                  value="2"
+                  weights='{"type1":0, "type2": 0}'
+                />N o
+              </label>
+            </div>
+            <div class="question" question="7">
+              <h3 class="question-title">
+                7. Which of the following do you experience (choose all that
+                applies)
+              </h3>
+              <label>
+                <input
+                  class="question-option"
+                  type="checkbox"
+                  name="q7"
+                  value="1"
+                  weights='{"type1":1, "type2": 0}'
+                />Easily irritabl e, prone t o headache, bloating and chest
+                tightness
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="checkbox"
+                  name="q7"
+                  value="2"
+                  weights='{"type1":0, "type2": 1}'
+                />Prone to fatigu e, forgetf ulness, dizziness or heart
+                palpitations
+              </label>
+            </div>
+            <div class="question" question="8" max-choice="2">
+              <h3 class="question-title">
+                8. What are some key factors that could be the cause of your
+                insomnia? (Choose up to 2 options)
+              </h3>
+              <label>
+                <input class="question-option" type="checkbox" name="q8"
+                value="1" weights='{"type1":1, "type2": 0}' / > Stress
+              </label>
+              <label>
+                <input class="question-option" type="checkbox" name="q8"
+                value="2" weights='{"type1":1, "type2": 0}' / > Bothering
+                thoughts not resolved
+              </label>
+              <label>
+                <input class="question-option" type="checkbox" name="q8"
+                value="3" weights='{"type1":0, "type2": 0}' / > Jet-lag
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="checkbox"
+                  name="q8"
+                  value="4"
+                />
+                Poor sleep habits (e.g. using electronics before sleep, no fixed
+                sleep schedule etc.)
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="checkbox"
+                  name="q8"
+                  value="5"
+                />
+                Have heavy dinnner or supper
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="checkbox"
+                  name="q8"
+                  value="6"
+                />
+                Consuming caffeine products
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="checkbox"
+                  name="q8"
+                  value="7"
+                  weights='{"type3":2}'
+                />
+                Menopause (females only)
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="checkbox"
+                  name="q8"
+                  value="8"
+                  weights='{"type3":2}'
+                />
+                Post-major illness recovery
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="checkbox"
+                  name="q8"
+                  value="9"
+                  weights='{"type3":2}'
+                />
+                Post-covid
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="checkbox"
+                  name="q8"
+                  value="10"
+                  unique
+                />
+                None of the above
+              </label>
+            </div>
+            <div class="question" question="9">
+              <h3 class="question-title">
+                9. Are you currently pregnant or breastfeeding?
+              </h3>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q9"
+                  value="1"
+                />Yes
+              </label>
+              <label>
+                <input
+                  class="question-option"
+                  type="radio"
+                  name="q9"
+                  value="2"
+                />No
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="evaluate-panel">
+          <div class="evaluate-panel-inner">
+            <div class="selected-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let userSelection = {};
+      function updateUserSelection() {
+        let score = {
+          type1: 0,
+          type2: 0,
+          type3: 0,
+        };
+        let selectedContainer = "";
+        $(".selected-container").html();
+        _.each(userSelection, (v, k) => {
+          selectedContainer += `Q${k}<br/>`;
+          _.each(v, (v) => {
+            let question = $(`.question[question='${k}']`);
+            let choice = question.find(`input[value='${v}']`);
+            let choiceText = choice.parent().text();
+            if (choice.attr("weights"))
+              choiceText += `<br/><small>${choice.attr("weights")}</small>`;
+            selectedContainer += `[${v}]${choiceText}<br/>`;
+            if (choice.attr("weights") !== undefined) {
+              let weights = choice.attr("weights");
+              weights = JSON.parse(`${choice.attr("weights")}`);
+              if (_.isObject(weights)) {
+                _.each(weights, function (v, k) {
+                  let keyScore = _.has(score, k) ? score[k] : 0;
+                  keyScore += parseInt(v);
+                  score[k] = keyScore;
+                });
+              }
+            }
+          });
+          selectedContainer += `<hr/>`;
+        });
+        selectedContainer += `<hr/>`;
+
+        let scoreInfo = "";
+        _.each(score, function (v, k) {
+          scoreInfo += `${k}: ${v}`;
+          scoreInfo += `<br/>`;
+        });
+        scoreInfo += "<hr/>";
+        let end;
+        if (score["type1"] > score["type2"]) {
+          end = "Type1";
+        }
+        if (score["type2"] > score["type1"]) {
+          end = "Type2";
+        }
+        if (score["type2"] == score["type1"]) {
+          end = "Type3";
+        }
+        if (score["type3"] >= score["type1"]) {
+          end = "Type3";
+        }
+        if (userSelection["9"] && userSelection["9"][0] == 1) {
+          end += " & Type4";
+        }
+        scoreInfo += `Evaluted: ${end}`;
+        scoreInfo += "<hr/><hr/>";
+        selectedContainer = scoreInfo + selectedContainer;
+
+        $(".selected-container").html(selectedContainer);
+        // console.log(score);
+      }
+      $("input").click(function (e) {
+        let currentSelection = $(this);
+        let currentVal = $(this).val();
+        let currentQuestion = currentSelection.parents(".question");
+        let currentQuestionNo = currentQuestion.attr("question");
+        switch (currentSelection.attr("type")) {
+          case "checkbox":
+            let maxChoice = parseInt(currentQuestion.attr("max-choice"));
+            let selections = userSelection[currentQuestionNo] ?? [];
+            if (_.includes(selections, currentVal)) {
+              selections.splice(selections.indexOf(currentVal), 1);
+            } else {
+              if (maxChoice) {
+                if (selections.length >= maxChoice) {
+                  selections.shift();
+                }
+              }
+              _.each(selections, function (e) {
+                let unique = currentQuestion
+                  .find(`input[value='${e}']`)
+                  .attr("unique");
+                if (unique !== undefined && unique != "false") {
+                  selections.splice(selections.indexOf(currentVal), 1);
+                }
+              });
+              if (
+                currentSelection.attr("unique") !== undefined &&
+                currentSelection.attr("unique") != "false"
+              ) {
+                selections = [];
+              }
+              selections.push(currentVal);
+            }
+            userSelection[currentQuestionNo] = selections;
+            currentQuestion.find("input").prop("checked", false);
+            _.each(selections, function (e) {
+              currentQuestion.find(`input[value='${e}']`).prop("checked", true);
+            });
+            break;
+          default:
+            userSelection[`${currentQuestionNo}`] = [currentVal];
+        }
+        updateUserSelection();
+      });
+
+      let types = {
+        1: {
+          title: "Type1: Restful Slumber",
+          result: `You  are likely to be suffering from Insomnia due to Liver Qi Stagnation`,
+          recommendation: `According to TCM theory, Liver Qi stagnation impedes on Qi and Blood flow in the entire body. Our Shen（神）, otherwise known as the state of mind, is interrupted as a result, causing our mind to be too active for sleep.
+
+      Our Restful Slumber formula combines a family of herbal actives that boasts all natural plant-based ingredients which helps to regulate liver Qi stagnation and calms the mind for better sleep.
+
+      Find out how the herbs work with each other to help you sleep better:
+
+      (Insert type1 below)`,
+          cta: `Bu y now at our Marketplace
+      Have further questions? Speak with our physicians via PQ
+      (and include download link for PQ)`,
+          care: `"Insomnia Care Tips
+      Don’ts before sleeping
+      Know your body habits.
+      If you are someone who can’t fall asleep after drinking caffeinated drinks, avoid consuming coffee, chocolate, alcohol or any other stimulants late in the day.
+      Do not eat heavy meals or food that is difficult to digest late at night.
+      The last meal and sleeping time should be spaced at least 3 hours apart. TCM has a saying “胃不和则卧不安”, which means that a poor stomach leads to unrestful sleep. Sometimes, when we eat too much or too little before bed, our tummies will feel uncomfortable (bloated or ache), making it difficult to have good quality sleep.
+      Avoid using your phone or tablet before sleeping.
+      Electronic devices emit blue light that interferes with melatonin production and disrupts the sleep cycle. Exposure to blue light close to bedtime may trick the brain into thinking that it’s still daytime.
+      Reduce stress by exercising, meditation or writing a gratitude journal daily"		`,
+        },
+        2: "Type2: Dream Buster",
+        3: "Type  3: Complex",
+        4: "Type 4: Normal",
+      };
+      let additional_messages = {
+        5.1: `In TCM, there is a concept of body clock whereby each organ has its own active time. This active time normally lasts around 2 hours and in this period, the organ is at its peak of function.
+            During the 1–3am period, it is the active time for the Liver. Waking up between 1-3am usually means that there is an imbalance in the Liver meridian.
+            This imbalance is normally due to Liver Qi stagnation which impedes on the Qi and Blood flow in the entire body. Our Shen（神）or what could be referred to as state of mind is interrupted as a result, which makes our mind too active for sleep.`,
+        7.1: `These are the commonly seen symptoms of Liver Qi stagnation. Due to the obstruction in Qi flow, Qi gets stuck in the stomach and chest, causing bloating and chest tightness.
+            Liver is the organ that controls emotions, a Qi stagnation in the Liver will cause the function of controlling emotions to be weakened. Hence, it is easier for mood swings to occur.
+            The Liver meridian passes through to the tip of the head. A stagnation in the Liver meridian causes a lack of Qi and Blood flow to the tip of the head. When that happens, it can lead to headaches and dizziness.`,
+        7.2: `Qi and Blood are both vital substances of our body, bringing us energy for daily life. When there is a deficiency in both Qi and Blood, there is a lack of energy to support daily function. Thus, it is easy to feel fatigue.
+            With lack of Qi and Blood, there is a lack of nourishment in the whole body, especially in the head area. This can cause dizziness and forgetfulness.
+            With Qi deficiency, the Heart is not able to function properly in promoting movement of Blood in the body. Thus, in order to compensate, the Heart pumps faster which results in heart palpitations.
+            `,
+        8.1: `Worrying about work, school, family, health or finances can keep your mind active at night, making it difficult to fall asleep. Stressful life events such as job loss, relationships struggles, illness/death of a loved one may also lead to insomnia.`,
+        8.2: `In TCM theory, when you have unresolved issues, your body internal clock may cause you to be awake between 1-3am. You may only fall asleep only during/after 3-5am. 1-3 am is the active time for the liver meridian. In TCM, the liver is in charge of our emotions (for e.g. anger, resentment, frustration, depression or irritability). Unresolved issues can result in an imbalance in the liver meridian and causes one to be awake between 1-3 am.`,
+        8.3: `All of us have a circadian rhythm that acts as an internal clock. Disrupting your body’s circadian rhythm can result in insomnia. Some causes include jet lag from traveling across different time zones or working with frequent changing shifts. `,
+        8.4: `It is important to go to bed and wake up at the same time everyday. The essence is consistency. This helps to keep the body’s circadian rhythm to stay on tack.
+            Using electronic devices such as smartphones or TV before bed can interfere with your sleep cycle.  Electronic devices emit blue light that interferes with the melatonin production and disrupts the sleep cycle. Exposure to blue light close to bed may trick the brain into thinking that it’s still daytime.`,
+        8.5: `Some people can experience heartburn (backflow of the acid and food from the stomach into the esophagus) after eating too late before sleeping and this can make you feel physically uncomfortable, affecting the quality of your sleep.
+            The last meal and sleeping time should be spaced at least 3 hours apart. TCM has a saying “胃不和则卧不安”, which means that a poor stomach leads to unrestful sleep. Sometimes, when we eat too much or too little before bed, our stomach will feel uncomfortable (bloated or aching), making it difficult to have good quality sleep.
+            `,
+        8.6: `Caffeine acts as a stimulant and makes one alert. Research also shows that caffeine interferes with circadian melatonin rhythm and delays the onset of sleep. Caffeine can also reduce the amount of deep sleep in the sleep cycle.`,
+        8.7: `The levels of estrogen and progesterone decrease during menopause. The hormone fluctuations may trigger changes to the body like hot flashes or night sweats. One may experience poorer quality sleep and sleep disturbances.`,
+        8.8: `It can be stressful to know that one is suffering from a major illness, affecting one’s mind unconciously. It can range from difficulty falling asleep, having frequent nightmares and waking up early in the morning. `,
+        8.1: `It can be stressful to know that one is suffering from a major illness, affecting one’s mind unconciously. It can range from difficulty falling asleep, having frequent nightmares and waking up early in the morning. `,
+        8.9: `Researchers are still learning the effects of long-COVID. Many studies have shown that a high number of people experience insomnia and sleep disturbances during the recovery period of COVID-19 infection.
+            If you have more questions about your body condition and require dedicated advice, our physicians are here to help! Download the PQ app and speak to our certified TCM physicians for free.`,
+      };
+    </script>
+  </body>
+</html>
+
+<style>
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  }
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  .main-wrapper {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .main-wrapper > div:first-child,
+  .main-wrapper > div > div {
+    border: 1px solid black;
+  }
+  .version {
+    font-family: "Courier New", Courier, monospace;
+    padding: 1em;
+    margin: 0;
+    letter-spacing: 0.5em;
+  }
+  .question label {
+    display: block;
+    padding: 0.5em;
+  }
+  .evaluate-panel {
+    flex: 1;
+    overflow: scroll;
+  }
+  .evaluate-panel-inner {
+    padding: 1em;
+  }
+  .evaluate-panel:first-child {
+    flex: 2;
+  }
+  .evaluate-panel-wrapper {
+    display: flex;
+    height: 95%;
+  }
+  .question-title {
+    margin: 0;
+  }
+  .question {
+    margin-bottom: 1em;
+  }
+</style>
